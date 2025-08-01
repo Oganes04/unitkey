@@ -1557,6 +1557,7 @@ input[type=submit].submit-button:active {
   display: block;
   margin-bottom: clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient));
   text-align: center;
+  font-weight: 500;
 }
 
 .catalog__item-info > span {
