@@ -404,7 +404,7 @@ form input[type=submit].submit-button {
   margin-top: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
 }
 
-input:not([type=submit]) {
+input:not([type=submit]):not([type=range]) {
   padding: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
   border: 1px solid transparent;
   border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
@@ -419,7 +419,7 @@ input:not([type=submit]) {
   transition: all 0.3s ease 0s;
 }
 
-input:not([type=submit])::placeholder {
+input:not([type=submit]):not([type=range])::placeholder {
   font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -428,7 +428,7 @@ input:not([type=submit])::placeholder {
   transition: all 0.3s ease 0s;
 }
 
-input:not([type=submit]):focus::placeholder {
+input:not([type=submit]):not([type=range]):focus::placeholder {
   opacity: 0;
 }
 
@@ -563,6 +563,232 @@ input[type=submit].submit-button:active {
   z-index: 99998;
   background-color: rgba(0, 0, 0, 0.3960784314);
   display: none;
+}
+
+/* ========================== СТИЛИЗАЦИЯ ПОЛЗУНКОВ ==================== */
+
+.input-select {
+  position: relative;
+  z-index: 10;
+}
+
+.input-select-items {
+  height: 0px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.input-select ul {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: clamp(10px * var(--coefficient), 10 * 100vw / var(--design-width) * var(--mobile-coefficient), 10px * var(--mobile-coefficient));
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  align-items: flex-start;
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  gap: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  overflow: hidden;
+  display: none;
+}
+
+.input-select ul li {
+  padding: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient)) clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient)) clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient)) clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.input-select ul li:hover {
+  background-color: #F5E5D5;
+}
+
+.input-calculator {
+  background-color: #FFFFFF;
+  border-radius: 100px;
+  padding-left: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+}
+
+.input-calculator select {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-calculator input {
+  border-radius: 0;
+  background-color: transparent;
+  padding: 0 !important;
+}
+
+.input-calculator .currency-icon {
+  width: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+  height: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+  border-radius: 100px;
+  background: linear-gradient(135deg, #F5E5D5 0%, #6E5A41 100%);
+  flex: none;
+}
+
+.input-calculator .currency-icon span {
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  color: #121E2A;
+  font-weight: 400;
+}
+
+.input-calculator .currency-icon svg {
+  width: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  height: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+}
+
+/* Custom Slider */
+
+.slider-container {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-top: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+}
+
+.slider-track {
+  width: 100%;
+  height: clamp(6px * var(--coefficient), 6 * 100vw / var(--design-width) * var(--mobile-coefficient), 6px * var(--mobile-coefficient));
+  background: linear-gradient(135deg, #F5E5D5 0%, #6E5A41 100%);
+  border-radius: 9999px;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.slider-progress {
+  height: 100%;
+  background: #6E5A41;
+  border-radius: 9999px;
+  transition: width 0.2s ease-out;
+  width: 20.5%;
+}
+
+.slider-input {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2rem;
+  opacity: 0;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 10;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.slider-input::-moz-range-thumb {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.slider-thumb {
+  position: absolute;
+  top: 50%;
+  width: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  height: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  background: linear-gradient(135deg, #F5E5D5 0%, #6E5A41 100%);
+  border-radius: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  left: 20.5%;
+}
+
+.slider-thumb:hover {
+  transform: translateY(-50%) translateX(-50%) scale(1.1);
+}
+
+/* Min/Max Labels */
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  color: #fbbf24;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ========================== Cтилизация checkbox ==================== */
+
+.check-label {
+  cursor: pointer;
+}
+
+.check-label input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.fakecheck {
+  width: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+  height: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+  flex-shrink: 0;
+  flex-grow: 0;
+  cursor: pointer;
+  border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  border: 1px solid #121E2A;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-out 0s;
+}
+
+.fakecheck svg polyline {
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
+  transition: all 0.3s ease-out 0s;
+}
+
+.fakecheck.checked svg polyline {
+  stroke-dashoffset: 0;
+}
+
+.fakecheck.checked {
+  border-color: #121E2A;
+  background-color: #F5E5D5;
+}
+
+.fakecheck.checked svg polyline {
+  stroke-dashoffset: 0;
+}
+
+.form__policy {
+  gap: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+  justify-content: flex-start;
+}
+
+.form__policy p {
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  line-height: 140%;
+}
+
+.form__policy p a {
+  color: #121E2A;
+  text-decoration: underline;
 }
 
 .header {
@@ -1190,6 +1416,103 @@ input[type=submit].submit-button:active {
   width: 100%;
 }
 
+.calculator__inner {
+  padding: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient)) clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient)) clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient)) clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+  border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  background: linear-gradient(280.52deg, #0C232D 34.34%, #001220 65.66%);
+}
+
+.calculator__inner-top {
+  justify-content: space-between;
+  color: #F5E5D5;
+  margin-bottom: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+}
+
+.calculator__inner-top h2 {
+  margin-bottom: 0;
+}
+
+.calculator__inner-top span {
+  font-size: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
+  line-height: 130%;
+  font-weight: 300;
+}
+
+.calculator__inner > strong {
+  font-size: clamp(28px * var(--coefficient), 28 * 100vw / var(--design-width) * var(--mobile-coefficient), 28px * var(--mobile-coefficient));
+  line-height: 120%;
+  color: #F5E5D5;
+  display: block;
+  margin-top: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  margin-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  font-weight: 500;
+}
+
+.calculator .row.col-3 {
+  gap: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  align-items: flex-start;
+}
+
+.calculator .row.col-3 label {
+  flex: 1;
+}
+
+.calculator .row.col-3 label > span {
+  font-size: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
+  line-height: 130%;
+  color: #FFFFFF;
+  display: block;
+  margin-bottom: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+}
+
+.calculator__form {
+  background-color: #F5E5D5;
+  border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  margin-top: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+  padding: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+}
+
+.calculator__form h3 {
+  font-size: clamp(28px * var(--coefficient), 28 * 100vw / var(--design-width) * var(--mobile-coefficient), 28px * var(--mobile-coefficient));
+  line-height: 120%;
+  margin-bottom: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  text-align: center;
+}
+
+.calculator__form .row {
+  gap: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  justify-content: space-between;
+}
+
+.calculator__form .row label {
+  flex: 1;
+}
+
+.calculator__form .row label > span {
+  color: #121E2A;
+  display: block;
+  margin-bottom: clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient));
+}
+
+.calculator__form .row:has(.form__policy) {
+  margin-top: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+}
+
+.calculator__form .input-calculator {
+  border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+}
+
+.calculator__form .input-calculator .currency-icon {
+  border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+}
+
+.calculator__form input[type=submit] {
+  width: fit-content;
+  padding: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  border-radius: 100px;
+  margin-top: 0 !important;
+}
+
 .benefit {
   background: linear-gradient(100.52deg, #0C232D 34.34%, #001220 65.66%);
 }
@@ -1302,7 +1625,7 @@ input[type=submit].submit-button:active {
 
 .safety li img {
   position: absolute;
-  top: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  top: 0;
   right: 0;
   height: 100%;
 }
@@ -1320,63 +1643,165 @@ input[type=submit].submit-button:active {
   width: fit-content;
 }
 
+.team {
+  background: linear-gradient(280.52deg, #0C232D 34.34%, #001220 65.66%);
+  padding-bottom: clamp(137px * var(--coefficient), 137 * 100vw / var(--design-width) * var(--mobile-coefficient), 137px * var(--mobile-coefficient));
+  padding-bottom: 0;
+}
+
 .team__items {
-  flex-direction: column;
-  gap: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
-  align-items: flex-start;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  padding-bottom: clamp(137px * var(--coefficient), 137 * 100vw / var(--design-width) * var(--mobile-coefficient), 137px * var(--mobile-coefficient));
 }
 
 .team__item {
-  gap: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  align-items: flex-start;
+  gap: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  position: relative;
 }
 
 .team__item > img {
-  width: clamp(486px * var(--coefficient), 486 * 100vw / var(--design-width) * var(--mobile-coefficient), 486px * var(--mobile-coefficient));
-  height: clamp(387px * var(--coefficient), 387 * 100vw / var(--design-width) * var(--mobile-coefficient), 387px * var(--mobile-coefficient));
+  width: clamp(360px * var(--coefficient), 360 * 100vw / var(--design-width) * var(--mobile-coefficient), 360px * var(--mobile-coefficient));
+  height: clamp(360px * var(--coefficient), 360 * 100vw / var(--design-width) * var(--mobile-coefficient), 360px * var(--mobile-coefficient));
+  border-radius: 100%;
   object-fit: cover;
+  flex: none;
+  position: relative;
+  z-index: 1;
+}
+
+.team__item-info {
+  background-color: #FFFFFF;
   border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  padding: clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient)) clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient)) clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient)) clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient));
+  flex: 1;
 }
 
-.team__item h3 {
-  font-family: PoiretOne;
-  font-size: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
-  line-height: 120%;
-  text-transform: uppercase;
-  margin-bottom: clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient));
-}
-
-.team__item span {
+.team__item-info > strong {
   font-size: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
-  line-height: 130%;
+  font-weight: 500;
   display: block;
-  padding-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
-  border-bottom: 1px solid #D0D2D4;
+  width: 100%;
+  text-align: center;
+}
+
+.team__item-info h3 {
+  font-family: PoiretOne;
+  font-size: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  text-align: center;
+  margin-bottom: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+}
+
+.team__item-phone {
+  gap: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
   margin-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
 }
 
-.team__item p {
-  font-size: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
-  line-height: 130%;
-  padding-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
-  border-bottom: 1px solid #D0D2D4;
-  margin-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
-}
-
-.team__item ul {
-  padding-left: 1rem;
-}
-
-.team__item li {
-  font-size: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
-  line-height: 130%;
-  list-style-type: disc;
-}
-
-.team__item li span {
-  font-size: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
-  line-height: 130%;
+.team__item-phone a {
+  font-size: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
+  line-height: 160%;
+  font-weight: 600;
   text-decoration: underline;
-  display: inline;
+  color: #121E2A;
+}
+
+.team__item-social {
+  gap: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 28px 0px rgba(27, 27, 27, 0.1215686275);
+  padding: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
+  border-radius: clamp(10px * var(--coefficient), 10 * 100vw / var(--design-width) * var(--mobile-coefficient), 10px * var(--mobile-coefficient));
+}
+
+.team__item-social img {
+  width: clamp(39px * var(--coefficient), 39 * 100vw / var(--design-width) * var(--mobile-coefficient), 39px * var(--mobile-coefficient));
+  height: clamp(39px * var(--coefficient), 39 * 100vw / var(--design-width) * var(--mobile-coefficient), 39px * var(--mobile-coefficient));
+}
+
+.team__item-social .col {
+  flex-direction: column;
+  gap: clamp(2px * var(--coefficient), 2 * 100vw / var(--design-width) * var(--mobile-coefficient), 2px * var(--mobile-coefficient));
+  align-items: flex-start;
+}
+
+.team__item-social strong {
+  font-weight: 400;
+  font-size: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
+  color: #121E2A;
+}
+
+.team__item-social span {
+  font-size: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
+  color: #9BA5B7;
+}
+
+.team__item-quote {
+  position: absolute;
+  box-shadow: 0px 2px 28px 0px rgba(84, 95, 113, 0.1215686275);
+  backdrop-filter: blur(8px);
+  padding: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  background: rgba(255, 255, 255, 0.2392156863);
+  border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  bottom: 0;
+  right: 0;
+  color: #FFFFFF;
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  width: clamp(564px * var(--coefficient), 564 * 100vw / var(--design-width) * var(--mobile-coefficient), 564px * var(--mobile-coefficient));
+  height: clamp(144px * var(--coefficient), 144 * 100vw / var(--design-width) * var(--mobile-coefficient), 144px * var(--mobile-coefficient));
+}
+
+.team__item-quote p {
+  width: clamp(352px * var(--coefficient), 352 * 100vw / var(--design-width) * var(--mobile-coefficient), 352px * var(--mobile-coefficient));
+  margin-left: auto;
+}
+
+.team__mission-wrapper {
+  position: relative;
+  margin-bottom: clamp(89px * var(--coefficient), 89 * 100vw / var(--design-width) * var(--mobile-coefficient), 89px * var(--mobile-coefficient));
+}
+
+.team__mission {
+  align-items: stretch;
+  gap: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: -98px;
+  bottom: clamp(98px * var(--coefficient), 98 * 100vw / var(--design-width) * var(--mobile-coefficient), 98px * var(--mobile-coefficient));
+  bottom: clamp(-98px * var(--mobile-coefficient), -9800vw / var(--design-width) * var(--mobile-coefficient), -98px * var(--coefficient));
+}
+
+.team__mission li {
+  padding: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  background: #FFFFFF;
+  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2392156863);
+  height: auto;
+  flex: 1;
+}
+
+.team__mission-header {
+  justify-content: flex-start;
+  gap: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  margin-bottom: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+}
+
+.team__mission h3 {
+  font-size: clamp(28px * var(--coefficient), 28 * 100vw / var(--design-width) * var(--mobile-coefficient), 28px * var(--mobile-coefficient));
+  line-height: 120%;
+  font-weight: 500;
+}
+
+.team__mission img {
+  width: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
+  height: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
+}
+
+.team__mission p {
+  padding-left: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  line-height: 160%;
 }
 
 .faq__items {
@@ -1457,6 +1882,40 @@ input[type=submit].submit-button:active {
   line-height: 130%;
   margin-bottom: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
   text-align: center;
+}
+
+.faq__form .form__policy {
+  margin-top: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+}
+
+.faq__form input[type=submit].submit-button {
+  margin-top: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+}
+
+.catalog__selectors {
+  flex-wrap: wrap;
+  gap: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+  justify-content: flex-start;
+  margin-bottom: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+}
+
+.catalog__selectors button {
+  height: clamp(52px * var(--coefficient), 52 * 100vw / var(--design-width) * var(--mobile-coefficient), 52px * var(--mobile-coefficient));
+  border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  border: 1px solid #121E2A;
+  padding: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient)) clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient)) clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient)) clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
+  font-size: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-weight: 400;
+}
+
+.catalog__selectors button.active {
+  background-color: #121E2A;
+  color: #F5E5D5;
 }
 
 .catalog__items {
