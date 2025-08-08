@@ -1910,6 +1910,10 @@ input[type=submit].submit-button:active {
   margin-top: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
 }
 
+.catalog .input-select {
+  display: none;
+}
+
 .catalog__selectors {
   flex-wrap: wrap;
   gap: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
@@ -2697,6 +2701,7 @@ input[type=submit].submit-button:active {
   }
 
   .catalog .input-select {
+    display: flex;
     background: linear-gradient(280.52deg, #0C232D 34.34%, #001220 65.66%);
     margin-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
   }
