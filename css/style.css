@@ -2713,8 +2713,8 @@ input[type=submit].submit-button:active {
   }
 
   .catalog .input-select input {
-    background-color: transparent;
-    color: #FFFFFF;
+    background-color: transparent !important;
+    color: #FFFFFF !important;
   }
 
   .catalog__items {
