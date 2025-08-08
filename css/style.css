@@ -481,6 +481,7 @@ input[type=submit].submit-button:active {
 /* ========================== Cтили для бургер меню ==================== */
 
 .header__burger-menu {
+  background: #F5E5D5;
   width: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
   height: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
   border-radius: 100%;
@@ -494,7 +495,7 @@ input[type=submit].submit-button:active {
 #burger_menu {
   z-index: 100;
   width: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
-  height: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  height: clamp(21px * var(--coefficient), 21 * 100vw / var(--design-width) * var(--mobile-coefficient), 21px * var(--mobile-coefficient));
   position: relative;
   transform: rotate(0deg);
   transition: 0.4s ease-in-out;
@@ -506,6 +507,7 @@ input[type=submit].submit-button:active {
   position: absolute;
   height: 3px;
   width: 100%;
+  background: #121E2A;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -519,11 +521,11 @@ input[type=submit].submit-button:active {
 
 #burger_menu span:nth-child(2),
 #burger_menu span:nth-child(3) {
-  top: clamp(7px * var(--coefficient), 7 * 100vw / var(--design-width) * var(--mobile-coefficient), 7px * var(--mobile-coefficient));
+  top: clamp(9px * var(--coefficient), 9 * 100vw / var(--design-width) * var(--mobile-coefficient), 9px * var(--mobile-coefficient));
 }
 
 #burger_menu span:nth-child(4) {
-  top: clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient));
+  top: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
 }
 
 #burger_menu.open span:nth-child(1) {
@@ -978,6 +980,14 @@ input[type=submit].submit-button:active {
 .header__bottom button::after,
 .header__bottom button::before {
   border-radius: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
+}
+
+.header__adaptive {
+  display: none;
+}
+
+.header .header__burger-menu {
+  display: none;
 }
 
 @keyframes phoneDot {
@@ -2078,14 +2088,6 @@ input[type=submit].submit-button:active {
     --design-width: 640;
   }
 
-  header {
-    display: none;
-  }
-
-  footer {
-    display: none;
-  }
-
   section {
     padding: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
   }
@@ -2879,6 +2881,102 @@ input[type=submit].submit-button:active {
 
   .footer__copyright a {
     font-size: clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient));
+  }
+
+  .header {
+    padding: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
+  }
+
+  .header__bottom {
+    display: none;
+  }
+
+  .header__link {
+    display: none;
+  }
+
+  .header__contacts {
+    display: none;
+  }
+
+  .header .button-download-offers {
+    display: none;
+  }
+
+  .header__top {
+    padding: 0;
+    border: none;
+  }
+
+  .header__top .header__burger-menu {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  .header__logo {
+    gap: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
+  }
+
+  .header__logo a {
+    width: clamp(72px * var(--coefficient), 72 * 100vw / var(--design-width) * var(--mobile-coefficient), 72px * var(--mobile-coefficient));
+    height: clamp(44px * var(--coefficient), 44 * 100vw / var(--design-width) * var(--mobile-coefficient), 44px * var(--mobile-coefficient));
+  }
+
+  .header__logo a img {
+    width: clamp(72px * var(--coefficient), 72 * 100vw / var(--design-width) * var(--mobile-coefficient), 72px * var(--mobile-coefficient));
+    height: clamp(44px * var(--coefficient), 44 * 100vw / var(--design-width) * var(--mobile-coefficient), 44px * var(--mobile-coefficient));
+  }
+
+  .header__logo span {
+    padding-left: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
+    font-size: clamp(13px * var(--coefficient), 13 * 100vw / var(--design-width) * var(--mobile-coefficient), 13px * var(--mobile-coefficient));
+    font-weight: 300;
+  }
+
+  .header__adaptive {
+    display: block;
+    height: calc(100vh - clamp(95px * var(--coefficient), 9500vw / var(--design-width) * var(--mobile-coefficient), 95px * var(--mobile-coefficient)));
+  }
+
+  .header__adaptive-menu {
+    flex-direction: column;
+    padding: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+    height: 100%;
+  }
+
+  .header__adaptive nav {
+    width: 100%;
+  }
+
+  .header__adaptive ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header__adaptive ul li {
+    width: 100%;
+  }
+
+  .header__adaptive ul li:last-child a {
+    border-bottom: 1px solid #F5E5D5;
+  }
+
+  .header__adaptive ul a {
+    width: 100%;
+    display: block;
+    font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+    color: #F5E5D5;
+    padding: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
+    border-top: 1px solid #F5E5D5;
+    text-align: center;
+  }
+
+  .header__adaptive .footer__contacts-item-content {
+    margin-bottom: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+    margin-top: auto;
   }
 }
 
