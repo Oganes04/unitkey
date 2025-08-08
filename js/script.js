@@ -43,13 +43,13 @@ $(".faq__item").on("click", function () {
 $("#burger_menu").click(function() {
   $(this).toggleClass('open');
   $(".header__adaptive").toggleClass("open");
-  $(".header__adaptive").slideToggle(300);
+//   $(".header__adaptive").slideToggle(300);
   $('html').toggleClass('hidden');
 });
 
 $(document).on('click', '.header__adaptive nav ul li', function(e) {
   $("#burger_menu").removeClass('open');
-  $(".header__adaptive").slideToggle(300);
+//   $(".header__adaptive").slideToggle(300);
   $('html').removeClass('hidden');
 });
 
