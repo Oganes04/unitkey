@@ -403,7 +403,7 @@ form input[type=submit].submit-button {
   margin-top: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
 }
 
-input:not([type=submit]):not([type=range]) {
+input:not([type=submit]):not([type=range]):not([type=checkbox]) {
   padding: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
   border: 1px solid transparent;
   border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
@@ -418,7 +418,7 @@ input:not([type=submit]):not([type=range]) {
   transition: all 0.3s ease 0s;
 }
 
-input:not([type=submit]):not([type=range])::placeholder {
+input:not([type=submit]):not([type=range]):not([type=checkbox])::placeholder {
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -ms-transition: all 0.3s ease 0s;
@@ -426,7 +426,7 @@ input:not([type=submit]):not([type=range])::placeholder {
   transition: all 0.3s ease 0s;
 }
 
-input:not([type=submit]):not([type=range]):focus::placeholder {
+input:not([type=submit]):not([type=range]):not([type=checkbox]):focus::placeholder {
   opacity: 0;
 }
 
@@ -2124,7 +2124,7 @@ input[type=submit].submit-button:active {
     margin: -50px 0 0;
   }
 
-  input:not([type=submit]):not([type=range]) {
+  input:not([type=submit]):not([type=range]):not([type=checkbox]) {
     padding: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
     border: 1px solid transparent;
     border-radius: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
@@ -2139,7 +2139,7 @@ input[type=submit].submit-button:active {
     transition: all 0.3s ease 0s;
   }
 
-  input:not([type=submit]):not([type=range])::placeholder {
+  input:not([type=submit]):not([type=range]):not([type=checkbox])::placeholder {
     font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
@@ -2148,7 +2148,7 @@ input[type=submit].submit-button:active {
     transition: all 0.3s ease 0s;
   }
 
-  input:not([type=submit]):not([type=range]):focus::placeholder {
+  input:not([type=submit]):not([type=range]):not([type=checkbox]):focus::placeholder {
     opacity: 0;
   }
 
@@ -2646,7 +2646,7 @@ input[type=submit].submit-button:active {
     font-size: clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient));
   }
 
-  .faq__form input:not([type=submit]):not([type=range]) {
+  .faq__form input:not([type=submit]):not([type=range]):not([type=checkbox]) {
     border-radius: 100px;
     padding: clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient)) clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient)) clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient)) clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
     font-size: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
