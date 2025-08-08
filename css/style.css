@@ -2937,7 +2937,6 @@ input[type=submit].submit-button:active {
   }
 
   .header__adaptive {
-    display: block;
     height: calc(100vh - clamp(95px * var(--coefficient), 9500vw / var(--design-width) * var(--mobile-coefficient), 95px * var(--mobile-coefficient)));
   }
 
