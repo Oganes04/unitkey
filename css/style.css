@@ -2220,6 +2220,10 @@ input[type=submit].submit-button:active {
     object-fit: cover;
   }
 
+  .offer::after {
+    height: clamp(652px * var(--coefficient), 652 * 100vw / var(--design-width) * var(--mobile-coefficient), 652px * var(--mobile-coefficient));
+  }
+
   .offer__tip {
     display: none;
   }
